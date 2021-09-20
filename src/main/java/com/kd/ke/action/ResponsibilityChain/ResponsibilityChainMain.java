@@ -13,12 +13,13 @@ public class ResponsibilityChainMain {
         LeaveRequest leaveRequest2 = new LeaveRequest(3,"chiqian");
         LeaveRequest leaveRequest3 = new LeaveRequest(30,"yunye");
 
+        //初始化责任链
         AbstractLeaveHandler youzai = new DirectLeaderLeaveHandler("youzai");
         AbstractLeaveHandler huaan = new DeptManagerLeaveHandler("huaan");
         AbstractLeaveHandler sangu = new GlobalManagerLeaveHandler("sangu");
         youzai.setNextHandler(huaan);
         huaan.setNextHandler(sangu);
-
+        //第一个节点开始处理请求
         youzai.handleLeaveRequest(leaveRequest1);
         youzai.handleLeaveRequest(leaveRequest2);
         youzai.handleLeaveRequest(leaveRequest3);
