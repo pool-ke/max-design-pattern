@@ -1,5 +1,7 @@
 package com.kd.ke.structure.proxy;
 
+import java.util.HashMap;
+
 /**
  * @ClassName: StaticProxyMain
  * @Description: 静态代理运行类
@@ -9,7 +11,10 @@ package com.kd.ke.structure.proxy;
 public class StaticProxyMain {
 
     public static void main(String[] args) {
-        Subject subject = new ProxySubject(new RealSubject());
-        subject.visit();
+//        Subject subject = new ProxySubject(new RealSubject());
+//        subject.visit();
+        HashMap<Integer, Integer> objectObjectHashMap = new HashMap<>(16);
+        int size = objectObjectHashMap.size();
+        System.out.println(size);
     }
 }
